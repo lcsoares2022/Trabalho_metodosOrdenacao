@@ -2,22 +2,20 @@ import classes.ArquivoTextoEscrita;
 import classes.ArquivoTextoLeitura;
 import classes.Jogador;
 import classes.SortingMethods;
+
 import java.util.Scanner;
 
 public class Main {
 
     private static final int MAX_PLAYERS = 4000;
-    private static final int MAX_PLAYERS_TO_SORT = 500;
-    private static final String DATA_BASE_FILE_PATH = "tmp/jogadores.txt"; //Para enviar ao VERDE, utilizar caminho /tmp/jogadores.txt
-    private static final String OUTPUT_FILE_PATH = "jogadoresOrdenados-Bubblesort.txt";
-
+    private static final int MAX_PLAYERS_TO_SORT = 464;
+    private static final String DATA_BASE_FILE_PATH = "tmp/jogadores.txt"; /*Para enviar ao VERDE, utilizar caminho /tmp/jogadores.txt*/
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Jogador[] jogadores = new Jogador[MAX_PLAYERS];
         Jogador[] jogadoresParaOrdenar = new Jogador[MAX_PLAYERS_TO_SORT];
         ArquivoTextoLeitura arqLeitura = new ArquivoTextoLeitura(DATA_BASE_FILE_PATH);
-        ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
         int id, altura, peso, anoNascimento, i = 0, j = 0, k = 0;
         String nome, universidade, cidadeNascimento, estadoNascimento;
         String input = arqLeitura.ler();
@@ -47,17 +45,23 @@ public class Main {
         scanner.close();
         arqLeitura.fecharArquivo();
 
-        /*Ordenacao com bubblesort*/
-        SortingMethods.bubblesort(jogadoresParaOrdenar);
+//        SortingMethods.bubblesort(jogadoresParaOrdenar);
+//        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Bubblesort.txt";
+//        ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
 
-        /*Impressao dos dados ordenados*/
-        while (jogadoresParaOrdenar[k] != null) {
+        SortingMethods.heapsort(jogadoresParaOrdenar);
+        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Heapsort.txt";
+        ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
+
+        /*Imprimir valores no arquivo jogadoresOrdenados*/
+        for (i = 0; i < jogadoresParaOrdenar.length; i++) {
             String resultado = String.format("[%d ## %s ## %d ## %d ## %d ## %s ## %s ## %s]", jogadoresParaOrdenar[k].getId(), jogadoresParaOrdenar[k].getNome(),
                     jogadoresParaOrdenar[k].getAltura(), jogadoresParaOrdenar[k].getPeso(), jogadoresParaOrdenar[k].getAnoNascimento(), jogadoresParaOrdenar[k].getUniversidade(),
                     jogadoresParaOrdenar[k].getCidadeNascimento(), jogadoresParaOrdenar[k].getEstadoNascimento());
             arqEscrita.escrever(resultado);
             k++;
         }
+
         arqEscrita.fecharArquivo();
     }
 }
