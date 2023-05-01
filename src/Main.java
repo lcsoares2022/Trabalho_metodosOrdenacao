@@ -49,8 +49,12 @@ public class Main {
 //        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Bubblesort.txt";
 //        ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
 
-        SortingMethods.heapsort(jogadoresParaOrdenar);
-        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Heapsort.txt";
+        // SortingMethods.heapsort(jogadoresParaOrdenar);
+        // String OUTPUT_FILE_PATH = "jogadoresOrdenados-Heapsort.txt";
+        // ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
+
+        SortingMethods.chamaMergesort(jogadoresParaOrdenar);
+        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Mergesort.txt";
         ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
 
         /*Imprimir valores no arquivo jogadoresOrdenados*/
