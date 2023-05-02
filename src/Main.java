@@ -18,7 +18,9 @@ public class Main {
         ArquivoTextoLeitura arqLeitura = new ArquivoTextoLeitura(DATA_BASE_FILE_PATH);
         int id, altura, peso, anoNascimento, i = 0, j = 0, k = 0;
         String nome, universidade, cidadeNascimento, estadoNascimento;
-        String input = arqLeitura.ler();
+        String input;
+        input = arqLeitura.ler();
+        input = arqLeitura.ler();
 
         /*Criacao do arquivo referencia para a base de dados*/
         while (input != null) {
