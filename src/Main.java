@@ -45,9 +45,9 @@ public class Main {
         scanner.close();
         arqLeitura.fecharArquivo();
 
-//        SortingMethods.bubblesort(jogadoresParaOrdenar);
-//        String OUTPUT_FILE_PATH = "jogadoresOrdenados-Bubblesort.txt";
-//        ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
+        // SortingMethods.bubblesort(jogadoresParaOrdenar);
+        // String OUTPUT_FILE_PATH = "jogadoresOrdenados-Bubblesort.txt";
+        // ArquivoTextoEscrita arqEscrita = new ArquivoTextoEscrita(OUTPUT_FILE_PATH);
 
         // SortingMethods.heapsort(jogadoresParaOrdenar);
         // String OUTPUT_FILE_PATH = "jogadoresOrdenados-Heapsort.txt";
