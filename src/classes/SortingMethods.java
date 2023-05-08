@@ -85,11 +85,10 @@ public class SortingMethods {
                 comparacoes++;
             } else {
                 int comparacaoNome = a1[i].getNome().compareTo(a2[j].getNome());
-                comparacoes++;
+                comparacoes+=2; //*comparacao para o else-if de cima e comparacao para o próximo if
                 if (comparacaoNome < 0) {
                     jogadores[k] = a1[i++];
                     trocas++;
-                    comparacoes++;
                 } else if (comparacaoNome > 0) {
                     jogadores[k] = a2[j++];
                     trocas++;
@@ -112,6 +111,9 @@ public class SortingMethods {
     }
     
     
+
+
+
     
     
     public static void bubblesort(Jogador[] jogadores) {
